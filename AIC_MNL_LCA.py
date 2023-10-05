@@ -13,9 +13,9 @@ import matplotlib.pyplot as plt
 
 # Load datasets
 health_df = pd.read_csv(
-    r"C:\Users\almor\OneDrive\Coding\health_conjoint_knowledge_removed.csv")
+    r"health_conjoint_knowledge_removed.csv")
 academic_df = pd.read_csv(
-    r"C:\Users\almor\OneDrive\Coding\academic_conjoint_knowledge_removed.csv")
+    r"academic_conjoint_knowledge_removed.csv")
 
 # Evaluate multinomial logit model
 def evaluate_multinomial_logit(df, features=['Author', 'Medium', 'Structure'], target='Selected', task='Task'):
@@ -226,8 +226,8 @@ health_participant_filtered_df = create_latent_class_dataframe(health_df, health
 academic_participant_filtered_df = create_latent_class_dataframe(academic_df, academic_participant_labels)
 
 # Merge and save latent classes
-merge_and_save_latent_classes(health_df, health_participant_filtered_df, "Health_Completed_df",r'C:\Users\almor\OneDrive\Coding\Portfolio\AIC')
-merge_and_save_latent_classes(academic_df, academic_participant_filtered_df, "Academic_Completed_df", r'C:\Users\almor\OneDrive\Coding\Portfolio\AIC')
+merge_and_save_latent_classes(health_df, health_participant_filtered_df, "Health_Completed_df",r'\AIC')
+merge_and_save_latent_classes(academic_df, academic_participant_filtered_df, "Academic_Completed_df", r'\AIC')
 
 
 print(health_participant_filtered_df['LatentClass'].value_counts())
