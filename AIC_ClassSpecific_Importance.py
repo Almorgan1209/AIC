@@ -110,7 +110,7 @@ academic_descriptive_differences = class_feature_differences(academic_df)
 
 
 
-# Print or use the results as needed
+# Print results
 print("Health Feature Importances within Latent Classes:")
 print(health_feature_importances)
 print("Academic Feature Importances within Latent Classes:")
@@ -124,7 +124,7 @@ print("Academic Class Frequencies and Total Samples:")
 print(academic_class_counts)
 print("Total number of samples for academic: ", academic_total_samples)
 
-#Compare whether Latent Class Assignment is same between topics.
+#Compare whether Latent Class Assignment is related between topics.
 def chi_square_membership(health_df, academic_df):
     # Extract the ID columns
     health_ids = health_df["ID"]
@@ -150,8 +150,3 @@ def chi_square_membership(health_df, academic_df):
 
 # Example usage
 chi_square_membership(health_df, academic_df)
-
-
-# Example usage
-chi_square_membership(health_df, academic_df)
-
