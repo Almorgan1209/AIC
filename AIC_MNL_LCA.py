@@ -185,11 +185,6 @@ def run_lca(name, X_train, X_test):
 run_lca('health_df', health_X_train, health_X_test)
 run_lca('academic_df', academic_X_train, academic_X_test)
 
-#BEST model for health and academics = 4 classes;  
-#strikes balance between explaining the data well (high log-likelihood)
-#not overly complex (relatively lower BIC compared to more complex models)
-# and having good cluster separation and cohesion (high silhouette score). 
-
 # Function to predict latent classes
 def predict_latent_classes(X, n_classes):
     np.random.seed(123)
@@ -223,16 +218,16 @@ def merge_and_save_latent_classes(df, participant_filtered_df, file_name, output
     filtered_df_attributes.to_csv(output_file, index=False)
 
 # Predict latent classes
-health_participant_labels = predict_latent_classes(health_df[['Author', 'Medium', 'Structure']], n_classes=4)
-academic_participant_labels = predict_latent_classes(academic_df[['Author', 'Medium', 'Structure']], n_classes=4)
+health_participant_labels = predict_latent_classes(health_df[['Author', 'Medium', 'Structure']], n_classes=2)
+academic_participant_labels = predict_latent_classes(academic_df[['Author', 'Medium', 'Structure']], n_classes=2)
 
 # Create dataframes with latent class assignments
 health_participant_filtered_df = create_latent_class_dataframe(health_df, health_participant_labels)
 academic_participant_filtered_df = create_latent_class_dataframe(academic_df, academic_participant_labels)
 
 # Merge and save latent classes
-merge_and_save_latent_classes(health_df, health_participant_filtered_df, "Health_Completed_df",R'C:\Users\almor\OneDrive\Coding\Portfolio\AIC')
-merge_and_save_latent_classes(academic_df, academic_participant_filtered_df, "Academic_Completed_df", R'C:\Users\almor\OneDrive\Coding\Portfolio\AIC')
+merge_and_save_latent_classes(health_df, health_participant_filtered_df, "Health_Completed_df",r'C:\Users\almor\OneDrive\Coding\Portfolio\AIC')
+merge_and_save_latent_classes(academic_df, academic_participant_filtered_df, "Academic_Completed_df", r'C:\Users\almor\OneDrive\Coding\Portfolio\AIC')
 
 
 print(health_participant_filtered_df['LatentClass'].value_counts())
