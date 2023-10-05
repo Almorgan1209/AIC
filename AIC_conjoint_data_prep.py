@@ -11,7 +11,7 @@ import argparse
 
 def load_data(file_name, sheet_names):
     """
-   Load data from an excel file and concatenate sheets.
+   Load data from excel file and concatenate sheets.
 
    Parameters
    ----------
@@ -116,7 +116,7 @@ def process_file(file_paths, exclude_ids_path):
     exclude_ids = pd.read_csv(exclude_ids_path)
     
     for file_path in file_paths:
-        # Clean the file path to create a valid variable name
+        # Clean file path to create valid variable name
     
         filtered_df = load_and_filter_data(file_path, exclude_ids['Response_ID'].tolist())
     
@@ -129,13 +129,13 @@ def process_file(file_paths, exclude_ids_path):
         else:
             print('All IDs removed')
             
-        # Save filtered_df to csv file
+        # Save filtered_df to csv
         output_csv_file = file_path.replace('.xls', '_filtered.csv')
         filtered_df.to_csv(output_csv_file, index=False)
        
 
 def main():
-    # Create an argument parser
+    # Create argument parser
     parser = argparse.ArgumentParser(description="Process Excel files and filter data.")
     
     # Add arguments for file paths
