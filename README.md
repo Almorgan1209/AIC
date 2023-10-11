@@ -10,7 +10,7 @@ The "Addressing the Information Crisis" project aimed to understand the intricat
 
 ## Key Findings
 
-1. Information Preferences Exist: The study confirmed that individuals have specific preferences for the information they consume. These preferences vary widely and are influenced by multiple factors, such as content, source credibility, and presentation style.
+1. Information Preferences Exist: The study confirmed that individuals have specific preferences for the information they consume. These preferences varied between two user subgroups and were influenced by multiple factors, such as author, medium, and presentation style.
 
 2. Context Matters: One of the significant revelations was that information preferences are highly contextual. What people prefer in health-related information might differ substantially from their preferences in academic contexts. Recognizing these nuances is crucial for effective information dissemination.
 
